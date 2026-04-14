@@ -6,10 +6,10 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-# Temporary dummy model to avoid TensorFlow errors on Streamlit Cloud
+# Temporary dummy model to avoid TensorFlow errors
 class DummyModel:
     def predict(self, X):
-        # Always return a fixed probability for demo purposes
+        # Always return a fixed probability for demo
         return np.array([[0.3]])
 
 model = DummyModel()
