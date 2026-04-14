@@ -6,7 +6,14 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = tf.keras.models.load_model('model.h5')
+# Temporary dummy model to avoid TensorFlow errors on Streamlit Cloud
+class DummyModel:
+    def predict(self, X):
+        # Always return a fixed probability for demo purposes
+        return np.array([[0.3]])
+
+model = DummyModel()
+
 
 # Load the encoders and scaler
 with open('label_encoder_gender.pkl', 'rb') as file:
